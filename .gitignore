@@ -2,6 +2,7 @@
 .classpath
 .settings/
 _entry-point
+.pmd
 
 target/
 pom.xml.tag

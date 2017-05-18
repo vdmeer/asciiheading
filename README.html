@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.3">
+<meta name="generator" content="Asciidoctor 1.5.5">
 <meta name="author" content="A simple tool to format paragraphs with indentation, indentation character, alignment, padding (left, right, both), padding characters (left, right, both), and in-line whitespace characters.">
 <title>ASCII Heading</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -18,7 +18,6 @@ audio:not([controls]){display:none;height:0}
 [hidden],template{display:none}
 script{display:none!important}
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
-body{margin:0}
 a{background:transparent}
 a:focus{outline:thin dotted}
 a:active,a:hover{outline:0}
@@ -53,7 +52,7 @@ textarea{overflow:auto;vertical-align:top}
 table{border-collapse:collapse;border-spacing:0}
 *,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
 html,body{font-size:100%}
-body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
 a:hover{cursor:pointer}
 img,object,embed{max-width:100%;height:auto}
 object,embed{height:100%}
@@ -65,7 +64,6 @@ img{-ms-interpolation-mode:bicubic}
 .text-center{text-align:center!important}
 .text-justify{text-align:justify!important}
 .hide{display:none}
-body{-webkit-font-smoothing:antialiased}
 img,object,svg{display:inline-block;vertical-align:middle}
 textarea{height:auto;min-height:50px}
 select{width:100%}
@@ -120,13 +118,16 @@ table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:
 table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
 table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
 table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
-body{tab-size:4}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
 h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
 .clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
 .clearfix:after,.float-group:after{clear:both}
-*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+*:not(pre)>code.nobreak{word-wrap:normal}
+*:not(pre)>code.nowrap{white-space:nowrap}
 pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
+em em{font-style:normal}
+strong strong{font-weight:400}
 .keyseq{color:rgba(51,51,51,.8)}
 kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
 .keyseq kbd:first-child{margin-left:0}
@@ -417,6 +418,97 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .hide-for-print{display:none!important}
 .show-for-print{display:inherit!important}}
 </style>
+<style>
+/* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
+/*pre.CodeRay {background-color:#f7f7f8;}*/
+.CodeRay .line-numbers{border-right:1px solid #d8d8d8;padding:0 0.5em 0 .25em}
+.CodeRay span.line-numbers{display:inline-block;margin-right:.5em;color:rgba(0,0,0,.3)}
+.CodeRay .line-numbers strong{color:rgba(0,0,0,.4)}
+table.CodeRay{border-collapse:separate;border-spacing:0;margin-bottom:0;border:0;background:none}
+table.CodeRay td{vertical-align: top;line-height:1.45}
+table.CodeRay td.line-numbers{text-align:right}
+table.CodeRay td.line-numbers>pre{padding:0;color:rgba(0,0,0,.3)}
+table.CodeRay td.code{padding:0 0 0 .5em}
+table.CodeRay td.code>pre{padding:0}
+.CodeRay .debug{color:#fff !important;background:#000080 !important}
+.CodeRay .annotation{color:#007}
+.CodeRay .attribute-name{color:#000080}
+.CodeRay .attribute-value{color:#700}
+.CodeRay .binary{color:#509}
+.CodeRay .comment{color:#998;font-style:italic}
+.CodeRay .char{color:#04d}
+.CodeRay .char .content{color:#04d}
+.CodeRay .char .delimiter{color:#039}
+.CodeRay .class{color:#458;font-weight:bold}
+.CodeRay .complex{color:#a08}
+.CodeRay .constant,.CodeRay .predefined-constant{color:#008080}
+.CodeRay .color{color:#099}
+.CodeRay .class-variable{color:#369}
+.CodeRay .decorator{color:#b0b}
+.CodeRay .definition{color:#099}
+.CodeRay .delimiter{color:#000}
+.CodeRay .doc{color:#970}
+.CodeRay .doctype{color:#34b}
+.CodeRay .doc-string{color:#d42}
+.CodeRay .escape{color:#666}
+.CodeRay .entity{color:#800}
+.CodeRay .error{color:#808}
+.CodeRay .exception{color:inherit}
+.CodeRay .filename{color:#099}
+.CodeRay .function{color:#900;font-weight:bold}
+.CodeRay .global-variable{color:#008080}
+.CodeRay .hex{color:#058}
+.CodeRay .integer,.CodeRay .float{color:#099}
+.CodeRay .include{color:#555}
+.CodeRay .inline{color:#000}
+.CodeRay .inline .inline{background:#ccc}
+.CodeRay .inline .inline .inline{background:#bbb}
+.CodeRay .inline .inline-delimiter{color:#d14}
+.CodeRay .inline-delimiter{color:#d14}
+.CodeRay .important{color:#555;font-weight:bold}
+.CodeRay .interpreted{color:#b2b}
+.CodeRay .instance-variable{color:#008080}
+.CodeRay .label{color:#970}
+.CodeRay .local-variable{color:#963}
+.CodeRay .octal{color:#40e}
+.CodeRay .predefined{color:#369}
+.CodeRay .preprocessor{color:#579}
+.CodeRay .pseudo-class{color:#555}
+.CodeRay .directive{font-weight:bold}
+.CodeRay .type{font-weight:bold}
+.CodeRay .predefined-type{color:inherit}
+.CodeRay .reserved,.CodeRay .keyword {color:#000;font-weight:bold}
+.CodeRay .key{color:#808}
+.CodeRay .key .delimiter{color:#606}
+.CodeRay .key .char{color:#80f}
+.CodeRay .value{color:#088}
+.CodeRay .regexp .delimiter{color:#808}
+.CodeRay .regexp .content{color:#808}
+.CodeRay .regexp .modifier{color:#808}
+.CodeRay .regexp .char{color:#d14}
+.CodeRay .regexp .function{color:#404;font-weight:bold}
+.CodeRay .string{color:#d20}
+.CodeRay .string .string .string{background:#ffd0d0}
+.CodeRay .string .content{color:#d14}
+.CodeRay .string .char{color:#d14}
+.CodeRay .string .delimiter{color:#d14}
+.CodeRay .shell{color:#d14}
+.CodeRay .shell .delimiter{color:#d14}
+.CodeRay .symbol{color:#990073}
+.CodeRay .symbol .content{color:#a60}
+.CodeRay .symbol .delimiter{color:#630}
+.CodeRay .tag{color:#008080}
+.CodeRay .tag-special{color:#d70}
+.CodeRay .variable{color:#036}
+.CodeRay .insert{background:#afa}
+.CodeRay .delete{background:#faa}
+.CodeRay .change{color:#aaf;background:#007}
+.CodeRay .head{color:#f8f;background:#505}
+.CodeRay .insert .insert{color:#080}
+.CodeRay .delete .delete{color:#800}
+.CodeRay .change .change{color:#66f}
+.CodeRay .head .head{color:#f4f}
+</style>
 </head>
 <body class="article">
 <div id="header">
@@ -660,10 +752,10 @@ Finally, paragraphs are rendered, i.e. a printable representation of the paragra
 <h3 id="_add_text">Add text</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">ap.addText("line	1");
-ap.addText("2  2");
-ap.addText("more text with	tab and \n newline");
-ap.addText("some more text to get it over the 80 character default width");</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java">ap.addText(<span class="string"><span class="delimiter">&quot;</span><span class="content">line        1</span><span class="delimiter">&quot;</span></span>);
+ap.addText(<span class="string"><span class="delimiter">&quot;</span><span class="content">2  2</span><span class="delimiter">&quot;</span></span>);
+ap.addText(<span class="string"><span class="delimiter">&quot;</span><span class="content">more text with        tab and </span><span class="char">\n</span><span class="content"> newline</span><span class="delimiter">&quot;</span></span>);
+ap.addText(<span class="string"><span class="delimiter">&quot;</span><span class="content">some more text to get it over the 80 character default width</span><span class="delimiter">&quot;</span></span>);</code></pre>
 </div>
 </div>
 </div>
@@ -671,7 +763,7 @@ ap.addText("some more text to get it over the 80 character default width");</cod
 <h3 id="_render_the_paragraph">Render the paragraph</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">String rend = ap.render();</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java"><span class="predefined-type">String</span> rend = ap.render();</code></pre>
 </div>
 </div>
 </div>
@@ -679,7 +771,7 @@ ap.addText("some more text to get it over the 80 character default width");</cod
 <h3 id="_print_the_list">Print the list</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">System.out.println(rend);</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java"><span class="predefined-type">System</span>.out.println(rend);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -709,27 +801,27 @@ The following example fills a paragraph with all sorts of extra whitespaces and 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">AsciiParagraph ap = new AsciiParagraph();
+<pre class="CodeRay highlight"><code data-lang="java">AsciiParagraph ap = <span class="keyword">new</span> AsciiParagraph();
 
-ap.addText("c2  c2");
-ap.addText("c3   c3");
-ap.addText("c4    c4");
-ap.addText("c5     c5");
-ap.addText("c6      c6");
-ap.addText("c7       c7");
+ap.addText(<span class="string"><span class="delimiter">&quot;</span><span class="content">c2  c2</span><span class="delimiter">&quot;</span></span>);
+ap.addText(<span class="string"><span class="delimiter">&quot;</span><span class="content">c3   c3</span><span class="delimiter">&quot;</span></span>);
+ap.addText(<span class="string"><span class="delimiter">&quot;</span><span class="content">c4    c4</span><span class="delimiter">&quot;</span></span>);
+ap.addText(<span class="string"><span class="delimiter">&quot;</span><span class="content">c5     c5</span><span class="delimiter">&quot;</span></span>);
+ap.addText(<span class="string"><span class="delimiter">&quot;</span><span class="content">c6      c6</span><span class="delimiter">&quot;</span></span>);
+ap.addText(<span class="string"><span class="delimiter">&quot;</span><span class="content">c7       c7</span><span class="delimiter">&quot;</span></span>);
 
-ap.addText("t2		t2");
-ap.addText("t3			t3");
-ap.addText("t4				t4");
-ap.addText("t5					t5");
-ap.addText("t6						t6");
-ap.addText("t7							t7");
+ap.addText(<span class="string"><span class="delimiter">&quot;</span><span class="content">t2                t2</span><span class="delimiter">&quot;</span></span>);
+ap.addText(<span class="string"><span class="delimiter">&quot;</span><span class="content">t3                        t3</span><span class="delimiter">&quot;</span></span>);
+ap.addText(<span class="string"><span class="delimiter">&quot;</span><span class="content">t4                                t4</span><span class="delimiter">&quot;</span></span>);
+ap.addText(<span class="string"><span class="delimiter">&quot;</span><span class="content">t5                                        t5</span><span class="delimiter">&quot;</span></span>);
+ap.addText(<span class="string"><span class="delimiter">&quot;</span><span class="content">t6                                                t6</span><span class="delimiter">&quot;</span></span>);
+ap.addText(<span class="string"><span class="delimiter">&quot;</span><span class="content">t7                                                        t7</span><span class="delimiter">&quot;</span></span>);
 
-ap.addText("word followed by " + StringUtils.CR + " followed by" + StringUtils.LF + " followed by \n");
+ap.addText(<span class="string"><span class="delimiter">&quot;</span><span class="content">word followed by </span><span class="delimiter">&quot;</span></span> + StringUtils.CR + <span class="string"><span class="delimiter">&quot;</span><span class="content"> followed by</span><span class="delimiter">&quot;</span></span> + StringUtils.LF + <span class="string"><span class="delimiter">&quot;</span><span class="content"> followed by </span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
 
-ap.getContext().setWidth(60);
+ap.getContext().setWidth(<span class="integer">60</span>);
 ap.getContext().setAlignment(ParagraphContextAlignment.LEFT);
-System.out.println(ap.render());</code></pre>
+<span class="predefined-type">System</span>.out.println(ap.render());</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -772,26 +864,26 @@ It also shows how we can use create and use a paragraph context object, and use 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">ParagraphContext pc = new ParagraphContext();
+<pre class="CodeRay highlight"><code data-lang="java">ParagraphContext pc = <span class="keyword">new</span> ParagraphContext();
 pc.setAlignment(TextAlign.JUSTIFIED);
-pc.setWidth(39);
+pc.setWidth(<span class="integer">39</span>);
 
-AsciiParagraph ap = new AsciiParagraph(pc);
-ap.addText(new LoremIpsum().getWords(29));
+AsciiParagraph ap = <span class="keyword">new</span> AsciiParagraph(pc);
+ap.addText(<span class="keyword">new</span> LoremIpsum().getWords(<span class="integer">29</span>));
 
-System.out.println(ap.render());
+<span class="predefined-type">System</span>.out.println(ap.render());
 
 pc.setAlignment(TextAlign.JUSTIFIED_RIGHT);
-System.out.println(ap.render());
+<span class="predefined-type">System</span>.out.println(ap.render());
 
 pc.setAlignment(TextAlign.CENTER);
-System.out.println(ap.render());
+<span class="predefined-type">System</span>.out.println(ap.render());
 
 pc.setAlignment(TextAlign.LEFT);
-System.out.println(ap.render());
+<span class="predefined-type">System</span>.out.println(ap.render());
 
 pc.setAlignment(TextAlign.RIGHT);
-System.out.println(ap.render());</code></pre>
+<span class="predefined-type">System</span>.out.println(ap.render());</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -843,17 +935,17 @@ The following example changes the width of a paragraph multiple times and render
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">AsciiParagraph ap = new AsciiParagraph();
-ap.addText(new LoremIpsum().getParagraphs(1));
+<pre class="CodeRay highlight"><code data-lang="java">AsciiParagraph ap = <span class="keyword">new</span> AsciiParagraph();
+ap.addText(<span class="keyword">new</span> LoremIpsum().getParagraphs(<span class="integer">1</span>));
 ap.getContext().setAlignment(TextAlign.LEFT);
 
-System.out.println(ap.render());
+<span class="predefined-type">System</span>.out.println(ap.render());
 
-ap.getContext().setWidth(60);
-System.out.println(ap.render());
+ap.getContext().setWidth(<span class="integer">60</span>);
+<span class="predefined-type">System</span>.out.println(ap.render());
 
-ap.getContext().setWidth(30);
-System.out.println(ap.render());</code></pre>
+ap.getContext().setWidth(<span class="integer">30</span>);
+<span class="predefined-type">System</span>.out.println(ap.render());</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -897,21 +989,21 @@ The example also shows how we can create a paragraph context first, and then set
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">ParagraphContext pc = new ParagraphContext();
+<pre class="CodeRay highlight"><code data-lang="java">ParagraphContext pc = <span class="keyword">new</span> ParagraphContext();
 pc.setAlignment(TextAlign.LEFT);
-pc.setWidth(60);
+pc.setWidth(<span class="integer">60</span>);
 
-AsciiParagraph ap = new AsciiParagraph(pc);
-ap.addText(new LoremIpsum().getParagraphs(1));
+AsciiParagraph ap = <span class="keyword">new</span> AsciiParagraph(pc);
+ap.addText(<span class="keyword">new</span> LoremIpsum().getParagraphs(<span class="integer">1</span>));
 
-System.out.println(ap.render());
+<span class="predefined-type">System</span>.out.println(ap.render());
 
-pc.setIndentation(5);
-System.out.println(ap.render());
+pc.setIndentation(<span class="integer">5</span>);
+<span class="predefined-type">System</span>.out.println(ap.render());
 
-pc.setIndentation(10);
-pc.setIndentationChar('˽');
-System.out.println(ap.render());</code></pre>
+pc.setIndentation(<span class="integer">10</span>);
+pc.setIndentationChar(<span class="string"><span class="delimiter">'</span><span class="content">˽</span><span class="delimiter">'</span></span>);
+<span class="predefined-type">System</span>.out.println(ap.render());</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -952,21 +1044,21 @@ The following example creates a paragraph, then changes its left padding, and fi
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">ParagraphContext pc = new ParagraphContext();
+<pre class="CodeRay highlight"><code data-lang="java">ParagraphContext pc = <span class="keyword">new</span> ParagraphContext();
 pc.setAlignment(TextAlign.LEFT);
-pc.setWidth(60);
+pc.setWidth(<span class="integer">60</span>);
 
-AsciiParagraph ap = new AsciiParagraph(pc);
-ap.addText(new LoremIpsum().getParagraphs(1));
+AsciiParagraph ap = <span class="keyword">new</span> AsciiParagraph(pc);
+ap.addText(<span class="keyword">new</span> LoremIpsum().getParagraphs(<span class="integer">1</span>));
 
-System.out.println(ap.render());
+<span class="predefined-type">System</span>.out.println(ap.render());
 
-pc.setPaddingLeft(10);
-System.out.println(ap.render());
+pc.setPaddingLeft(<span class="integer">10</span>);
+<span class="predefined-type">System</span>.out.println(ap.render());
 
-pc.setPaddingLeft(20);
-pc.setLeftPaddingChar('-');
-System.out.println(ap.render());</code></pre>
+pc.setPaddingLeft(<span class="integer">20</span>);
+pc.setLeftPaddingChar(<span class="string"><span class="delimiter">'</span><span class="content">-</span><span class="delimiter">'</span></span>);
+<span class="predefined-type">System</span>.out.println(ap.render());</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1013,18 +1105,18 @@ The paragraph is aligned justified to show the padding.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">ParagraphContext pc = new ParagraphContext();
+<pre class="CodeRay highlight"><code data-lang="java">ParagraphContext pc = <span class="keyword">new</span> ParagraphContext();
 pc.setAlignment(TextAlign.JUSTIFIED);
-pc.setWidth(60);
+pc.setWidth(<span class="integer">60</span>);
 
-AsciiParagraph ap = new AsciiParagraph(pc);
-ap.addText(new LoremIpsum().getParagraphs(1));
+AsciiParagraph ap = <span class="keyword">new</span> AsciiParagraph(pc);
+ap.addText(<span class="keyword">new</span> LoremIpsum().getParagraphs(<span class="integer">1</span>));
 
-System.out.println(ap.render());
+<span class="predefined-type">System</span>.out.println(ap.render());
 
-pc.setPaddingRight(20);
-pc.setRightPaddingChar('+');
-System.out.println(ap.render());</code></pre>
+pc.setPaddingRight(<span class="integer">20</span>);
+pc.setRightPaddingChar(<span class="string"><span class="delimiter">'</span><span class="content">+</span><span class="delimiter">'</span></span>);
+<span class="predefined-type">System</span>.out.println(ap.render());</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1062,20 +1154,20 @@ The following example creates a paragraph and renders it, then first changes the
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">ParagraphContext pc = new ParagraphContext();
+<pre class="CodeRay highlight"><code data-lang="java">ParagraphContext pc = <span class="keyword">new</span> ParagraphContext();
 pc.setAlignment(TextAlign.JUSTIFIED);
-pc.setWidth(50);
+pc.setWidth(<span class="integer">50</span>);
 
-AsciiParagraph ap = new AsciiParagraph(pc);
-ap.addText(new LoremIpsum().getWords(29));
+AsciiParagraph ap = <span class="keyword">new</span> AsciiParagraph(pc);
+ap.addText(<span class="keyword">new</span> LoremIpsum().getWords(<span class="integer">29</span>));
 
-System.out.println(ap.render());
+<span class="predefined-type">System</span>.out.println(ap.render());
 
-pc.setLineStart("// ");
-System.out.println(ap.render());
+pc.setLineStart(<span class="string"><span class="delimiter">&quot;</span><span class="content">// </span><span class="delimiter">&quot;</span></span>);
+<span class="predefined-type">System</span>.out.println(ap.render());
 
-pc.setLineEnd(" --&gt;");
-System.out.println(ap.render());</code></pre>
+pc.setLineEnd(<span class="string"><span class="delimiter">&quot;</span><span class="content"> --&gt;</span><span class="delimiter">&quot;</span></span>);
+<span class="predefined-type">System</span>.out.println(ap.render());</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1116,28 +1208,28 @@ Note: the width needs to be reset before each change and re-calculation, otherwi
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">ParagraphContext pc = new ParagraphContext();
+<pre class="CodeRay highlight"><code data-lang="java">ParagraphContext pc = <span class="keyword">new</span> ParagraphContext();
 pc.setAlignment(TextAlign.JUSTIFIED);
-pc.setWidth(50);
+pc.setWidth(<span class="integer">50</span>);
 
-AsciiParagraph ap = new AsciiParagraph(pc);
-ap.addText(new LoremIpsum().getWords(29));
+AsciiParagraph ap = <span class="keyword">new</span> AsciiParagraph(pc);
+ap.addText(<span class="keyword">new</span> LoremIpsum().getWords(<span class="integer">29</span>));
 
-System.out.println(ap.render());
+<span class="predefined-type">System</span>.out.println(ap.render());
 
-pc.setLineStart("// ");
+pc.setLineStart(<span class="string"><span class="delimiter">&quot;</span><span class="content">// </span><span class="delimiter">&quot;</span></span>);
 pc.calculateWidthInclusive();
-System.out.println(ap.render());
+<span class="predefined-type">System</span>.out.println(ap.render());
 
-pc.setWidth(50);
-pc.setLineEnd(" --&gt;");
+pc.setWidth(<span class="integer">50</span>);
+pc.setLineEnd(<span class="string"><span class="delimiter">&quot;</span><span class="content"> --&gt;</span><span class="delimiter">&quot;</span></span>);
 pc.calculateWidthInclusive();
-System.out.println(ap.render());
+<span class="predefined-type">System</span>.out.println(ap.render());
 
-pc.setWidth(50);
-pc.setIndentation(10);
+pc.setWidth(<span class="integer">50</span>);
+pc.setIndentation(<span class="integer">10</span>);
 pc.calculateWidthInclusive();
-System.out.println(ap.render());</code></pre>
+<span class="predefined-type">System</span>.out.println(ap.render());</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1192,32 +1284,32 @@ This object maintains a map, and returns the map&#8217;s values as text for the 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">HasText textProvider = new HasText() {
-	Map&lt;String, String&gt; map = new HashMap&lt;String, String&gt;(){
-		private static final long serialVersionUID = 1L;{
-			put("k1", new LoremIpsum().getWords(30));
-			put("k2", new LoremIpsum().getWords(30));
-			put("k3", new LoremIpsum().getWords(30));
-	}};
+<pre class="CodeRay highlight"><code data-lang="java">HasText textProvider = <span class="keyword">new</span> HasText() {
+        <span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">String</span>&gt; map = <span class="keyword">new</span> <span class="predefined-type">HashMap</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">String</span>&gt;(){
+                <span class="directive">private</span> <span class="directive">static</span> <span class="directive">final</span> <span class="type">long</span> serialVersionUID = <span class="integer">1L</span>;{
+                        put(<span class="string"><span class="delimiter">&quot;</span><span class="content">k1</span><span class="delimiter">&quot;</span></span>, <span class="keyword">new</span> LoremIpsum().getWords(<span class="integer">30</span>));
+                        put(<span class="string"><span class="delimiter">&quot;</span><span class="content">k2</span><span class="delimiter">&quot;</span></span>, <span class="keyword">new</span> LoremIpsum().getWords(<span class="integer">30</span>));
+                        put(<span class="string"><span class="delimiter">&quot;</span><span class="content">k3</span><span class="delimiter">&quot;</span></span>, <span class="keyword">new</span> LoremIpsum().getWords(<span class="integer">30</span>));
+        }};
 
-	@Override
-	public Collection&lt;String&gt; getTextCollection() {
-		return this.map.values();
-	}
+        <span class="annotation">@Override</span>
+        <span class="directive">public</span> <span class="predefined-type">Collection</span>&lt;<span class="predefined-type">String</span>&gt; getTextCollection() {
+                <span class="keyword">return</span> <span class="local-variable">this</span>.map.values();
+        }
 
-	@Override
-	public String getText() {
-		return null;
-	}
+        <span class="annotation">@Override</span>
+        <span class="directive">public</span> <span class="predefined-type">String</span> getText() {
+                <span class="keyword">return</span> <span class="predefined-constant">null</span>;
+        }
 };
 
-ParagraphContext pc = new ParagraphContext();
-pc.setWidth(50);
+ParagraphContext pc = <span class="keyword">new</span> ParagraphContext();
+pc.setWidth(<span class="integer">50</span>);
 
-AsciiParagraph ap = new AsciiParagraph(pc);
+AsciiParagraph ap = <span class="keyword">new</span> AsciiParagraph(pc);
 ap.addText(textProvider);
 
-System.out.println(ap.render());</code></pre>
+<span class="predefined-type">System</span>.out.println(ap.render());</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1255,12 +1347,12 @@ The example also uses the toString method on the ST to show the difference.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">ST st = new ST("An object with a render method, which will be found and used to add text");
-AsciiParagraph ap = new AsciiParagraph();
+<pre class="CodeRay highlight"><code data-lang="java">ST st = <span class="keyword">new</span> ST(<span class="string"><span class="delimiter">&quot;</span><span class="content">An object with a render method, which will be found and used to add text</span><span class="delimiter">&quot;</span></span>);
+AsciiParagraph ap = <span class="keyword">new</span> AsciiParagraph();
 ap.addText(st);
-System.out.println(ap.render());
+<span class="predefined-type">System</span>.out.println(ap.render());
 
-System.out.println(st);</code></pre>
+<span class="predefined-type">System</span>.out.println(st);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1286,11 +1378,8 @@ System.out.println(st);</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-03-08 00:04:58 GMT
+Last updated 2017-04-25 16:46:59 BST
 </div>
 </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
-<script>hljs.initHighlighting()</script>
 </body>
 </html>
