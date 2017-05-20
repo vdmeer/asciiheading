@@ -98,13 +98,7 @@
         <dependency>
             <groupId>de.vandermeer</groupId>
             <artifactId>skb-interfaces</artifactId>
-            <version>0.0.2</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>de.vandermeer</groupId>
-            <artifactId>char-translation</artifactId>
-            <version>0.0.2</version>
+            <version>0.0.3-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
